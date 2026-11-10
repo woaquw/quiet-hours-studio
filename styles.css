@@ -72,6 +72,15 @@ h3 { font-size: 1.5rem; letter-spacing: -0.02em; }
 .hero__text .mono { color: var(--dim); }
 .lead { font-size: 1.15rem; color: var(--dim); max-width: 480px; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.ai-cta {
+  display: flex; align-items: center; gap: 14px; max-width: 520px; padding: 14px 18px; text-decoration: none;
+  border: 1px solid rgba(255, 59, 31, .55); background: rgba(255, 59, 31, .08); transition: background .2s, border-color .2s;
+}
+.ai-cta:hover { background: rgba(255, 59, 31, .16); border-color: var(--rec); }
+.ai-cta strong { display: block; font-weight: 500; }
+.ai-cta small { color: var(--dim); text-transform: none; font-size: .75rem; }
+.ai-cta__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--rec); flex: none; animation: rec 1.6s infinite; }
+.ai-cta__arrow { margin-left: auto; color: var(--rec); font-size: 1.3rem; }
 .facts { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); padding-top: 20px; max-width: 520px; }
 .facts dt { color: var(--dim); }
 .facts dd { font: 500 1.8rem var(--sans); letter-spacing: -0.02em; text-transform: none; margin-top: 4px; }

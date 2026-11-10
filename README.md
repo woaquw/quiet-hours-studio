@@ -1,6 +1,6 @@
-# Quiet Hours — Recording Studio Website with AI Assistant
+# Quiet Hours — Recording Studio Website with an AI Chatbot
 
-A minimal, dark landing page for a (fictional) Brooklyn recording studio, built to turn visitors into booked sessions.
+A minimal, dark landing page for a (fictional) Brooklyn recording studio with a built-in **AI assistant** that answers visitors' questions from the studio's own data and guides them to book.
 
 **Live demo:** https://woaquw.github.io/quiet-hours-studio/
 
@@ -8,8 +8,8 @@ A minimal, dark landing page for a (fictional) Brooklyn recording studio, built 
 
 ## What makes it stand out
 
+- **AI chatbot "Ask the engineer".** Opens from the hero button or the floating button (with a teaser bubble). Answers questions about rates, rooms, gear and session prep from the studio's own facts, does price math ("5 songs with vocal tuning" → $1,100) and points people to the booking section. Runs on a free open-source model (Llama 3.3 on Cloudflare Workers AI). Worker code: [ai-site-assistant](https://github.com/woaquw/ai-site-assistant).
 - **"Raw vs Our mix" player.** A short track is synthesized live with the Web Audio API and played through two processing chains at once: an unmixed one (muddy, unbalanced, mono) and a mixed one (EQ, balance, stereo width, reverb, bus compression, limiter). One click (or the `M` key) flips between them instantly, in sync, with a live spectrum visualizer. No audio files, no licensing issues.
-- **AI assistant "Ask the engineer".** Answers questions about rates, rooms, gear and session prep from the studio's own facts, does price math ("5 songs with vocal tuning" → $1,100) and points people to the booking section. Runs on a free open-source model (Llama 3.3 on Cloudflare Workers AI). Worker code: [ai-site-assistant](https://github.com/woaquw/ai-site-assistant).
 - **Session builder.** Pick a service, hours or songs, extras (senior engineer, vocal tuning, rush delivery…), a day and a free start time; the price updates live, then the request is sent with a full summary.
 - **Live room status** in the header ("Room A · recording now · free from 6 pm"), calculated in studio time (New York).
 

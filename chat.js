@@ -47,6 +47,28 @@
     }
   }
   launcher.addEventListener("click", () => open(panel.hidden));
+  // Let the page open the chat from its own buttons: <a data-open-chat>
+  window.openChat = () => open(true);
+  document.addEventListener("click", (e) => {
+    const trigger = e.target.closest("[data-open-chat]");
+    if (trigger) { e.preventDefault(); hideTeaser(); open(true); }
+  });
+
+  // Small teaser above the button a few seconds after load (once per visit).
+  const teaser = document.createElement("div");
+  teaser.className = "chat__teaser";
+  teaser.innerHTML = `<button class="chat__teaser-text" type="button">${cfg.teaser || "Questions? Ask me, I reply instantly."}</button><button class="chat__teaser-x" type="button" aria-label="Hide">×</button>`;
+  root.insertBefore(teaser, launcher);
+  function hideTeaser() {
+    teaser.classList.remove("is-on");
+    try { sessionStorage.setItem("chat.teaser", "1"); } catch { /* storage blocked */ }
+  }
+  teaser.querySelector(".chat__teaser-text").addEventListener("click", () => { hideTeaser(); open(true); });
+  teaser.querySelector(".chat__teaser-x").addEventListener("click", hideTeaser);
+  let seen = false;
+  try { seen = sessionStorage.getItem("chat.teaser") === "1"; } catch { /* ignore */ }
+  if (!seen) setTimeout(() => { if (panel.hidden) teaser.classList.add("is-on"); }, cfg.teaserDelay ?? 4000);
+  launcher.addEventListener("click", hideTeaser);
   $(".chat__close").addEventListener("click", () => open(false));
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !panel.hidden) open(false); });
 

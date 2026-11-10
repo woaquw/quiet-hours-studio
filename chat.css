@@ -43,6 +43,19 @@
 .chat__send:hover { background: var(--rec); color: #fff; }
 .chat__note { font: .66rem var(--mono); text-transform: uppercase; color: var(--dim); padding: 8px 18px 12px; }
 
+/* Teaser bubble */
+.chat__teaser {
+  position: absolute; right: 0; bottom: calc(100% + 12px); width: max-content; max-width: 280px;
+  display: flex; align-items: flex-start; background: var(--fg); color: var(--bg);
+  opacity: 0; transform: translateY(8px); pointer-events: none; transition: opacity .3s, transform .3s;
+}
+.chat__teaser.is-on { opacity: 1; transform: none; pointer-events: auto; }
+.chat__teaser::after { content: ""; position: absolute; right: 22px; top: 100%; border: 8px solid transparent; border-top-color: var(--fg); }
+.chat__teaser-text { border: 0; background: none; color: inherit; text-align: left; padding: 12px 4px 12px 14px; font: 500 .92rem/1.35 var(--sans); }
+.chat__teaser-x { border: 0; background: none; color: inherit; opacity: .5; font-size: 1.2rem; padding: 6px 10px; }
+.chat__teaser-x:hover { opacity: 1; }
+.chat.is-open .chat__teaser { display: none; }
+
 @media (max-width: 640px) {
   .chat { right: 16px; bottom: 16px; }
   .chat__label { font-size: .85rem; }
