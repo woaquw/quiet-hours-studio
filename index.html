@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiet Hours — Recording &amp; Mixing Studio, Brooklyn</title>
+  <meta name="description" content="Recording, mixing, mastering and podcast studio in Brooklyn. Hear the difference a real mix makes, build your session and book online.">
+  <meta name="theme-color" content="#0e0e0e">
+  <meta property="og:title" content="Quiet Hours — Recording Studio, Brooklyn">
+  <meta property="og:description" content="Make it sound like the record in your head.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1531651008558-ed1740375b39?w=1200&q=70&auto=format">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230e0e0e'/%3E%3Ccircle cx='32' cy='32' r='12' fill='%23ff3b1f'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top" id="top">
+    <a class="logo" href="#top" aria-label="Quiet Hours home"><span class="logo__dot"></span>QUIET HOURS</a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#listen">Listen</a>
+      <a href="#services">Services</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#book" class="nav__cta">Book a session</a>
+    </nav>
+    <p class="status" id="status" aria-live="polite"><span class="rec"></span><span id="statusText">Room A · recording now</span></p>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__img">
+        <img src="https://images.unsplash.com/photo-1531651008558-ed1740375b39?w=1400&q=70&auto=format"
+             srcset="https://images.unsplash.com/photo-1531651008558-ed1740375b39?w=800&q=70&auto=format 800w,
+                     https://images.unsplash.com/photo-1531651008558-ed1740375b39?w=1400&q=70&auto=format 1400w,
+                     https://images.unsplash.com/photo-1531651008558-ed1740375b39?w=2000&q=65&auto=format 2000w"
+             sizes="(max-width: 860px) 100vw, 55vw" width="1400" height="1750"
+             alt="Condenser microphone with a pop filter in a dark studio" fetchpriority="high">
+      </div>
+      <div class="hero__text">
+        <p class="mono">Recording · Mixing · Mastering · Podcasts — Brooklyn, NY</p>
+        <h1>Make it sound like the record in your head.</h1>
+        <p class="lead">Three treated rooms, engineers who actually listen, and mixes that hold up on headphones, car speakers and club systems.</p>
+        <div class="actions">
+          <a class="btn" href="#book">Book a session</a>
+          <a class="btn btn--line" href="#listen">Hear the difference ↓</a>
+        </div>
+        <dl class="facts mono">
+          <div><dt>Rooms</dt><dd>3</dd></div>
+          <div><dt>Sessions</dt><dd>1,200+</dd></div>
+          <div><dt>From</dt><dd>$65/h</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 01 Listen -->
+    <section class="section" id="listen">
+      <header class="section__head reveal">
+        <p class="num mono">01 — Listen</p>
+        <h2>Same song. One click.<br><span class="dim">Hear what a mix does.</span></h2>
+      </header>
+
+      <div class="ab reveal">
+        <div class="ab__player">
+          <button class="ab__play" id="abPlay" aria-label="Play demo track">
+            <svg viewBox="0 0 24 24" class="i-play" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg>
+            <svg viewBox="0 0 24 24" class="i-pause" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+          </button>
+          <div class="ab__meta">
+            <p class="mono dim">Demo loop · 92 BPM · generated live in your browser</p>
+            <div class="ab__switch" role="radiogroup" aria-label="Choose version">
+              <button role="radio" aria-checked="true" data-mode="raw" class="is-on">Raw recording</button>
+              <button role="radio" aria-checked="false" data-mode="mix">Our mix</button>
+            </div>
+            <p class="mono dim hint">Tip: press <kbd>M</kbd> to flip while it plays</p>
+          </div>
+        </div>
+        <canvas class="ab__viz" id="abViz" width="1200" height="220" aria-hidden="true"></canvas>
+        <ol class="ab__notes mono" id="abNotes">
+          <li><span>EQ</span> Cut the 300 Hz mud, add air on top</li>
+          <li><span>Balance</span> Bass tucked under the kick, hats tamed</li>
+          <li><span>Space</span> Stereo width and a short room reverb</li>
+          <li><span>Glue</span> Bus compression and a limiter for loudness</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 02 Services -->
+    <section class="section" id="services">
+      <header class="section__head reveal">
+        <p class="num mono">02 — Services</p>
+        <h2>What we do</h2>
+      </header>
+      <ul class="services">
+        <li class="service reveal" data-img="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=700&q=70&auto=format">
+          <span class="mono dim">A</span>
+          <h3>Recording</h3>
+          <p>Vocals, bands, single instruments. Engineer included.</p>
+          <strong class="mono">$65 / hour</strong>
+        </li>
+        <li class="service reveal" data-img="https://images.unsplash.com/photo-1535406208535-1429839cfd13?w=700&q=70&auto=format">
+          <span class="mono dim">B</span>
+          <h3>Mixing</h3>
+          <p>Up to 48 tracks, two rounds of revisions, stems on request.</p>
+          <strong class="mono">$180 / song</strong>
+        </li>
+        <li class="service reveal" data-img="https://images.unsplash.com/photo-1566612453429-50faafea3e5f?w=700&q=70&auto=format">
+          <span class="mono dim">C</span>
+          <h3>Mastering</h3>
+          <p>Streaming-ready loudness, vinyl and CD versions available.</p>
+          <strong class="mono">$60 / track</strong>
+        </li>
+        <li class="service reveal" data-img="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=700&q=70&auto=format">
+          <span class="mono dim">D</span>
+          <h3>Podcast</h3>
+          <p>Up to 4 mics, video-ready room, edited files the same day.</p>
+          <strong class="mono">$50 / hour</strong>
+        </li>
+      </ul>
+      <div class="service-preview" id="servicePreview" aria-hidden="true"><img alt=""></div>
+    </section>
+
+    <!-- 03 Rooms -->
+    <section class="section" id="rooms">
+      <header class="section__head reveal">
+        <p class="num mono">03 — Rooms</p>
+        <h2>Three rooms, one quiet building</h2>
+      </header>
+      <div class="rooms">
+        <figure class="room reveal">
+          <img src="https://images.unsplash.com/photo-1758336717046-c475fc6f45ce?w=900&q=70&auto=format" width="900" height="600" loading="lazy" alt="Control room with a mixing console and wooden acoustic panels">
+          <figcaption>
+            <h3>Room A — Control</h3>
+            <p class="mono dim">Analog console · ATC monitors · 28 m²</p>
+          </figcaption>
+        </figure>
+        <figure class="room reveal">
+          <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=900&q=70&auto=format" width="900" height="600" loading="lazy" alt="Live room with a drum kit and warm light">
+          <figcaption>
+            <h3>Room B — Live</h3>
+            <p class="mono dim">Drums · full band · 4.2 m ceiling · 45 m²</p>
+          </figcaption>
+        </figure>
+        <figure class="room reveal">
+          <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=900&q=70&auto=format" width="900" height="600" loading="lazy" alt="Small booth with guitars by a sunny window">
+          <figcaption>
+            <h3>Room C — Booth</h3>
+            <p class="mono dim">Vocals · podcasts · voice-over · 12 m²</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 04 Build your session -->
+    <section class="section" id="book">
+      <header class="section__head reveal">
+        <p class="num mono">04 — Book</p>
+        <h2>Build your session</h2>
+        <p class="dim">See the price before you ask. We confirm within 2 hours during opening times.</p>
+      </header>
+
+      <form class="builder reveal" id="builder" novalidate data-endpoint="">
+        <div class="builder__steps">
+          <fieldset>
+            <legend class="mono">1 · Service</legend>
+            <div class="seg" id="svc"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="mono" id="qtyLabel">2 · Hours</legend>
+            <div class="stepper">
+              <button type="button" id="qtyMinus" aria-label="Less">−</button>
+              <output id="qty" aria-live="polite">3</output>
+              <button type="button" id="qtyPlus" aria-label="More">+</button>
+              <span class="dim mono" id="qtyHint">min 2 hours</span>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="mono">3 · Extras</legend>
+            <div class="extras" id="extras"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="mono">4 · Day &amp; start time</legend>
+            <div class="days" id="days" role="listbox" aria-label="Day"></div>
+            <div class="slots" id="slots" role="listbox" aria-label="Start time"></div>
+          </fieldset>
+
+          <fieldset class="contact">
+            <legend class="mono">5 · Your details</legend>
+            <label>Name<input name="name" autocomplete="name" required minlength="2"></label>
+            <label>Email<input name="email" type="email" autocomplete="email" required></label>
+            <label class="wide">Reference track or project link <span class="dim">(optional)</span><input name="link" type="url" placeholder="https://"></label>
+            <input class="hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+          </fieldset>
+        </div>
+
+        <aside class="summary" aria-live="polite">
+          <p class="mono dim">Your session</p>
+          <ul id="sumList" class="mono"></ul>
+          <p class="total"><span class="mono dim">Total</span><strong id="sumTotal">$0</strong></p>
+          <p class="mono dim small">50% deposit after confirmation. Free cancellation up to 48 h before.</p>
+          <button class="btn btn--full" type="submit" id="bookBtn">Request this session</button>
+          <p class="form-msg" id="formMsg" role="status"></p>
+        </aside>
+      </form>
+    </section>
+
+    <!-- 05 Gear + words -->
+    <section class="section split">
+      <div class="reveal">
+        <p class="num mono">05 — Gear</p>
+        <ul class="gear mono">
+          <li><span>Console</span>API 1608-II, 32 ch</li>
+          <li><span>Monitors</span>ATC SCM25A · Yamaha NS-10</li>
+          <li><span>Mics</span>Neumann U87 · AKG C414 · Shure SM7B ×4</li>
+          <li><span>Pres</span>Neve 1073 ×2 · UA 610</li>
+          <li><span>Outboard</span>LA-2A · 1176 · SSL bus comp</li>
+          <li><span>Instruments</span>Yamaha U1 piano · Ludwig kit · Fender amps</li>
+        </ul>
+      </div>
+      <div class="words reveal">
+        <p class="num mono">06 — Words</p>
+        <blockquote>“They fixed a vocal I had given up on. The mix finally sounds like the demo felt.”</blockquote>
+        <p class="mono dim">— Maya R., singer-songwriter</p>
+        <blockquote>“We record our podcast here every week. In and out in an hour, files in our inbox by dinner.”</blockquote>
+        <p class="mono dim">— The Long Weekend podcast</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div>
+      <a class="logo" href="#top"><span class="logo__dot"></span>QUIET HOURS</a>
+      <p class="mono dim">456 Example St, Brooklyn, NY · (718) 555-0199 · Daily 10 am – 2 am</p>
+    </div>
+    <p class="mono dim small">Demo website for a fictional studio, built as a portfolio project. Photos: Unsplash. Audio is synthesized in the browser.</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+  <script src="audio.js" defer></script>
+  <script>
+    window.CHAT_CONFIG = {
+      endpoint: "https://brightmove-chat.brightmove-chat.workers.dev/chat",
+      bot: "quiet-hours",
+      title: "Ask the engineer",
+      subtitle: "AI · usually knows the answer",
+      avatar: "QH",
+      greeting: "Hey! Ask me anything about rates, rooms, gear or how to prep for your session.",
+      suggestions: ["How much for mixing 5 songs?", "What mics do you have?", "How do I prepare for recording vocals?", "Can we record a podcast with 3 people?"],
+      fallback: "Can't answer right now. Call (718) 555-0199 or use the session builder.",
+      cta: { text: "Build your session →", href: "#book", match: "book|session|builder" }
+    };
+  </script>
+  <script src="chat.js" defer></script>
+</body>
+</html>
